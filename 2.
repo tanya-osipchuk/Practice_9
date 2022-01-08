@@ -1,0 +1,23 @@
+import time
+def binary_search(lst, target):
+    first = 0
+    last = len(lst) - 1
+    found = False
+    
+    while first <= last and not found:
+        midpoint = (first + last) // 2
+        if lst[midpoint] == target:
+            return midpoint
+        else:
+            if target < lst[midpoint]:
+                last = midpoint - 1
+            else:
+	            first = midpoint + 1
+    return found
+    
+n = 1000000
+my_list = list(range(1, int(n) + 1))
+num = int(input("Введите число, которое хотите найти: "))
+start = time.time()
+print("Номер позиции искомого числа: ", binary_search(my_list, num))
+print("Скорость работы: %s с." % (time.time() - start))
