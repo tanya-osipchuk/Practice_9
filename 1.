@@ -1,0 +1,13 @@
+import time
+
+def linear_search(lst, target):
+    for i in range(0, len(lst)):
+        if (lst[i] == target):
+            return i
+     
+n = 1000000
+my_list = list(range(1, int(n) + 1))
+num = int(input("Введите число, которое хотите найти: "))
+start = time.time()
+print("Номер позиции искомого числа: ", linear_search(my_list, num))
+print("Скорость работы: %s с." % (time.time() - start))
