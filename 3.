@@ -1,0 +1,15 @@
+import time
+
+def s(alist, val, start_ind):
+    if (alist[start_ind] == val):
+        return start_ind
+    else:
+        return s(alist, val, start_ind+1)
+    
+num = int(input("Ведите число, которое хотите найти: "))
+n = int(input("Введите длину списка: "))
+my_list = list(range(1, int(n) + 1))
+start = time.time()
+
+print("Номер позиции искомого числа: ", s(my_list, num, 0))
+print("Скорость работы: %s с." % (time.time() - start))
